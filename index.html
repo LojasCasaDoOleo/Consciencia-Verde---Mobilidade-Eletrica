@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consciência Verde</title>
+  <link rel="stylesheet" href="css.css" />
+  <link rel="icon" href="Frame 62.png" type="image/png">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-title">
+        <img src="Frame 62.png" alt="Logo da Marca" class="logo" />
+        <div class="header-text">
+          <h1>Consciência Verde - Mobilidade Elétrica</h1>
+          <p>Desempenho, autonomia e estilo para o seu dia a dia.</p>
+          <a href="Untitled-1.html" class="btn-cta">Ver Fichas Técnicas</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="benefits container">
+    <h2>Por que escolher a EcoScooters?</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="benefit-card">
+          <h3>Autonomia</h3>
+          <p>Até 70 km com uma única carga.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Zero Emissões</h3>
+          <p>Ajude o planeta com transporte sustentável.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Economia</h3>
+          <p>Custos muito menores que combustíveis fósseis.</p>
+        </div>
+      </div>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </section>
+
+ <section class="models container">
+  <h2>Modelos em Destaque</h2>
+  <div class="model-cards">
+    <div class="model-card">
+      <a href="Untitled-1.html">
+        <img src="prt3.jpg" alt="Modelo 1">
+      </a>
+      <h4>StarMega</h4>
+      <p>Ideal para o tráfego urbano.</p>
+    </div>
+    <div class="model-card">
+      <a href="Untitled-1.html">
+        <img src="LS-800.jpg" alt="Modelo 2">
+      </a>
+      <h4>LS-800</h4>
+      <p>Mais potência e velocidade.</p>
+    </div>
+    <div class="model-card">
+      <a href="Untitled-1.html">
+        <img src="patineet.jpg" alt="Modelo 3">
+      </a>
+      <h4>Patinete</h4>
+      <p>Foco em autonomia e leveza.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="cta">
+    <h2>Todos os Nossos Modelos</h2>
+    <a href="Untitled-1.html" class="btn-cta">Ver Modelos</a>
+  </section>
+
+  <a class="whatsapp-button" href="http://Wa.me//+5511949781649" target="_blank" title="Fale conosco no WhatsApp">💬</a>
+
+  <script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.carousel-btn.next');
+  const prevButton = document.querySelector('.carousel-btn.prev');
+  let currentSlide = 0;
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      updateSlidePosition();
+    }
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlidePosition();
+    }
+  });
+
+  // Touch support
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const touchX = e.touches[0].clientX;
+    const diff = startX - touchX;
+
+    if (diff > 50 && currentSlide < slides.length - 1) {
+      currentSlide++;
+      updateSlidePosition();
+      isDragging = false;
+    } else if (diff < -50 && currentSlide > 0) {
+      currentSlide--;
+      updateSlidePosition();
+      isDragging = false;
+    }
+  });
+
+  track.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  // Garantir que o slide está correto ao redimensionar
+  window.addEventListener('resize', updateSlidePosition);
+</script>
+
+  
+
+</body>
+</html>

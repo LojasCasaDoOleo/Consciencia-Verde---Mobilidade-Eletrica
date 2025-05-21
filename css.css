@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0e27;
+  color: #ebebeb;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #0a0e27 60%, #3cef9b 100%);
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: auto;
+}
+
+.header-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 2.5rem;
+  color: #ebebeb;
+  margin-bottom: 0.5rem;
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  color: #ebebeb;
+  margin-bottom: 2rem;
+}
+
+.btn-cta {
+  background-color: #3cef9b;
+  color: #0a0e27;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-cta:hover {
+  background-color: #2ccf87;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.benefits h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #3cef9b;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  touch-action: pan-y;
+}
+
+.benefit-card {
+  min-width: 100%;
+  background-color: #1b1f39;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.benefit-card h3 {
+  color: #3cef9b;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 0.5rem;
+}
+
+.carousel-btn.next {
+  right: 0.5rem;
+}
+
+.models h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #3cef9b;
+}
+
+.model-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.model-card {
+  background-color: #ebebeb;
+  color: #0a0e27;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.model-card:hover {
+  transform: translateY(-5px);
+}
+
+.model-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.model-card h4 {
+  color: #0a0e27;
+}
+
+.cta {
+  background-color: #1b1f39;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.cta h2 {
+  color: #3cef9b;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  color: #ebebeb;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    position: static;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+
+  header {
+    padding-top: 2rem;
+  }
+
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-cta {
+    font-size: 0.95rem;
+  }
+
+  .model-card img {
+    max-width: 100%; 
+  }
+
+  .cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 200px; 
+  }
+
+  .header-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .header-text p {
+    font-size: 1rem;
+  }
+
+  .btn-cta {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .model-card {
+    flex: 1 1 80%; 
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta p {
+    font-size: 0.95rem;
+  }
+}
